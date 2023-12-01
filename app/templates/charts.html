@@ -1,0 +1,47 @@
+<!--charts.html-->
+{% extends 'base.html' %}
+
+{% block title %}
+Charts
+{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block content %}
+    <h1>Market Data Charts</h1>
+    
+    <!-- Searchable ticker input and Indicator dropdown -->
+    <div class="search-and-indicators">
+        <input type="text" id="tickerSearch" placeholder="Search for a ticker...">
+        <div id="tickerDropdown" class="dropdown-container"></div>
+    </div>
+
+    <!-- Indicator search input and dropdown -->
+    <div class="search-and-indicators">
+        <input type="text" id="indicatorSearch" placeholder="Search for an indicator...">
+        <div id="indicatorDropdown" class="dropdown-container"></div>
+    </div>
+
+    <select id="intervalSelection">
+        <option value="1h">1 Hour</option>
+        <option value="2h">2 Hours</option>
+        <option value="4h">4 Hours</option>
+        <option value="1d">1 Day</option>
+        <option value="1w">1 Week</option>
+    </select>
+
+    <!-- Chart container (hidden initially) -->
+    <div id="chartContainer" class="chart-container" style="display: none;">
+        <canvas id="myChart"></canvas>
+    </div>
+
+
+    <script src="{{ url_for('static', filename='js/chart-functions.js') }}"></script>
+    <script>
+        // Initialize chart and other components
+        initializeChart();
+    </script>
+{% endblock %}

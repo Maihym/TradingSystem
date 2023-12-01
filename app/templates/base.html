@@ -1,0 +1,35 @@
+<!--base.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Include common CSS, JavaScript, etc. -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('main.index') }}">Home</a></li>
+            <li><a href="{{ url_for('main.charts') }}">Charts</a></li>
+            <li><a href="{{ url_for('profile.profile') }}">Profile</a></li> <!-- Updated endpoint -->
+            <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <!-- Page Content -->
+    {% block content %}
+    {% endblock %}
+
+    <!-- Include common footer, scripts, etc. -->
+</body>
+</html>

@@ -1,0 +1,96 @@
+/* chart.css */
+
+.chart-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-container {
+    position: absolute;
+    border: 1px solid #ddd;
+    z-index: 10;
+    background-color: white;
+    width: 100%;
+}
+
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+.search-and-indicators {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.indicator-dropdown {
+    display: none; /* Hidden initially */
+    overflow-y: auto;
+    max-height: 200px; /* Adjust as needed */
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.indicator-dropdown label {
+    display: block;
+}
+
+.dropdown-container {
+    position: absolute;
+    background-color: #fff; /* White background */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: adds a subtle shadow */
+    width: 100%; /* Adjust width as necessary */
+    max-height: 200px; /* Maximum height before scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    z-index: 10; /* Ensure it's above other content */
+}
+
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0; /* Light grey background on hover */
+}
+
+.highlighted {
+    background-color: #f0f0f0; /* Highlight color */
+}
+
+#tickerDropdown {
+    position: absolute;
+    width: 100%; /* Dropdown takes full width of its parent */
+    max-height: 160px; /* Adjust as needed to show only 4 items at a time */
+    overflow-y: auto; /* Enable vertical scroll */
+    background-color: white; /* Or any color you prefer */
+    border: 1px solid #ddd; /* Optional border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    top: 100%; /* Position below the search bar */
+    left: 0;
+    z-index: 10; /* Ensure dropdown appears above other content */
+}
+
+#tickerSearch {
+    width: 100%; /* Make search bar take full width of its parent */
+}
+
+#tickerSearch:focus {
+    outline: none;
+}
+
+.search-and-indicators {
+    position: relative; /* Needed for absolute positioning of children */
+    width: 300px; /* Set this to the desired width of your search bar and dropdown */
+}
+
+/* Add more chart-specific styles here */
